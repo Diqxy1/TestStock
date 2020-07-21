@@ -23,5 +23,6 @@ def redirect_to_home(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', redirect_to_home),
-    path('products/', include('apps.products.urls'))
+    path('products/', include('apps.products.urls')),
+    path('categories/', include('apps.categories.urls')),
 ]
