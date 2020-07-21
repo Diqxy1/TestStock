@@ -1,0 +1,32 @@
+{% extends 'bases/base.html' %}
+
+{% block content %}
+
+<div class="mx-2 px-2 my-2">
+     <table class="table">
+       <thead>
+         <tr>
+           <th scope="col">ID</th>
+           <th scope="col">Nome</th>
+           <th scope="col">Categoria</th>
+           <th scope='col'>Descrição</th>
+           <th scope='col'>Quantidade</th>
+           <th scope="col">Preço</th>
+         </tr>
+       </thead>
+       {% for product in products %}
+       <tbody>
+         <tr>
+           <th scope="row">{{ product.id }}</th>
+           <td>{{ product.name }}</td>
+           <td>{{ product.category }}</td>
+           <td>{{ product.abstract }}</td>
+           <td>{{ product.amount }}</td>
+           <td>{{ product.abstract_price }}</td>
+         </tr>
+       </tbody>
+       {% endfor %}
+     </table>
+   </div>
+
+{% endblock %}

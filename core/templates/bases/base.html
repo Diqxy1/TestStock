@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+    <title>Stock Sync</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+      <a class="navbar-brand" href="#">Stock Sync</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Adicionar Categoria</a>
+          <a class="nav-item nav-link" href="{% url 'product_create' %}">Adicionar Produto</a>
+        </div>
+      </div>
+      <form action="#" method="get" class="form-inline">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Id" name="id">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Editar</button>
+      </form>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <script src="{% static 'vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap.min.js' %}"></script>
+  </body>
+</html>
